@@ -30,11 +30,12 @@ A small Java utility for regenerating new filename from old one. Most methods in
 # Usage Example - Mixed with negative index
 ```Java
 	FilenameBuilder fb = new FilenameBuilder("com.myapp.todolist.apk");
-	// org.myapp.todolist.trial.ver2.zip
-	fb.replaceFirst("org").add("ver2", 3).add("trial", -2).changeExtension("zip");
+	// org.myapp.todolist_new.trial.zip
+	fb.replaceFirst("org").append("_new", 2).add("trial", -1).changeExtension("zip");
 	File f_out = new File(fb.toString());
 ```
 
 # Known Bugs and ideas
 Haven't fully implement the power of backed LinkedList, which may cause bugs on removing elements.
+
 Ability to parse/serialize number like r00,r01,r02...
